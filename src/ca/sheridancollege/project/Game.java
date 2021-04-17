@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public abstract class Game {
 
     private final String name;//the title of the game
-    private ArrayList<Player> players;// the players of the game
+    private static ArrayList<Player> players;// the players of the game
 
     public Game(String name) {
         this.name = name;
@@ -44,12 +44,29 @@ public abstract class Game {
     public void setPlayers(ArrayList<Player> players) {
         this.players = players;
     }
+    public static ArrayList<Player> newPlayer(String name) {
+        
+       /* for(name p : name.values()){
+            
+        }
+        if(name == name){
+            
+        }*/
+    	return new ArrayList<Player>(Game.players);
+    }
 
     /**
      * Play the game. This might be one method or many method calls depending on your game.
      */
     public abstract void play();
-
+    
+    public static  Deal(ArrayList<Card> cards){
+        for(int i = 0; i < 52; i++){
+            if(i % 2 == 0){
+                
+            }
+        }
+    }
     /**
      * When the game is over, use this method to declare and display a winning player.
      */

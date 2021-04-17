@@ -14,12 +14,30 @@ package ca.sheridancollege.project;
 public abstract class Card {
     //default modifier for child classes
 
-    /**
-     * Students should implement this method for their specific children classes
-     *
-     * @return a String representation of a card. Could be an UNO card, a regular playing card etc.
-     */
+    
+    public enum VALUE {TWO,THREE,FOUR,FIVE,SIX,SEVEN,EIGHT,NINE,TEN,JACK,QUEEN,KING,ACE;}
+    
+    public enum SUIT {CLUBS,DIAMONDS,SPADES,HEARTS;}
+    
+    private final SUIT suit;
+    
+    private final VALUE value;
+   
+    public Card(SUIT suit, VALUE value){
+        this.suit = suit;
+        this.value = value;
+    }
+
+    public SUIT getSuit() {
+        return suit;
+    }
+
+    public VALUE getValue() {
+        return value;
+    }
     @Override
-    public abstract String toString();
+    public String toString() {
+    	return value + " of " + suit;
+    }
 
 }
