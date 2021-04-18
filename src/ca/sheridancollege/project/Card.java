@@ -14,14 +14,44 @@ package ca.sheridancollege.project;
 public abstract class Card {
     //default modifier for child classes
 
+  public enum VALUE {
+        TWO(2),
+        THREE(3),
+        FOUR(4),
+        FIVE(5),
+        SIX(6),
+        SEVEN(7),
+        EIGHT(8),
+        NINE(9),
+        TEN(10),
+        JACK(11),
+        QUEEN(12),
+        KING(13),
+        ACE(14);
     
-    public enum VALUE {TWO,THREE,FOUR,FIVE,SIX,SEVEN,EIGHT,NINE,TEN,JACK,QUEEN,KING,ACE;}
-    
-    public enum SUIT {CLUBS,DIAMONDS,SPADES,HEARTS;}
-    
+        private final int rank;
+        
+        private VALUE(int rank){
+            this.rank = rank;
+        }
+        
+        public int getRank(){
+            return rank;
+        }
+        
+        public String toString(){
+            return String.format("%s",rank);
+        }
+} 
+public enum SUIT {
+    CLUBS,DIAMONDS,SPADES,HEARTS;
+}
+
+   
     private final SUIT suit;
-    
     private final VALUE value;
+    
+   
    
     public Card(SUIT suit, VALUE value){
         this.suit = suit;
@@ -37,7 +67,7 @@ public abstract class Card {
     }
     @Override
     public String toString() {
-    	return value + " of " + suit;
+    	return value.name() + " of " + suit + "(" + value.getRank() +")";
     }
 
 }
