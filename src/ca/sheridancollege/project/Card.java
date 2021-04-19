@@ -39,13 +39,14 @@ public abstract class Card {
             return rank;
         }
         
+        @Override
         public String toString(){
             return String.format("%s",rank);
         }
 } 
-public enum SUIT {
-    CLUBS,DIAMONDS,SPADES,HEARTS;
-}
+    public enum SUIT {
+        CLUBS,DIAMONDS,SPADES,HEARTS;
+    }
 
    
     private final SUIT suit;

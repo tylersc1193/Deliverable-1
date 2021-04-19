@@ -5,7 +5,7 @@
  */
 package ca.sheridancollege.project;
 
-import java.util.ArrayList;
+
 
 /**
  *
@@ -13,10 +13,20 @@ import java.util.ArrayList;
  */
 public class Players extends Player{
 
+    @Override
+    public void setName(String name) {
+        super.setName(name); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String getName() {
+        return super.getName(); //To change body of generated methods, choose Tools | Templates.
+    }
+
+
     public Players(String name) {
         super(name);
     }
-    
     
     
 
