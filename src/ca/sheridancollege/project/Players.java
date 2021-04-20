@@ -8,7 +8,7 @@ package ca.sheridancollege.project;
 
 
 /**
- *
+ * A sub-class of Player
  * @author scott
  */
 public class Players extends Player{

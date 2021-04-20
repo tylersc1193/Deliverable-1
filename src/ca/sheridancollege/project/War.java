@@ -10,14 +10,16 @@ import java.util.Collections;
 import java.util.Scanner;
 
 /**
- *
+ * The view class that asks the player if they want to play.
  * @author scott
  */
 public class War {
 
-    /**
-     * @param args the command line arguments
-     */
+/*
+* @param args the command line arguments
+* the main method that asks the user if they want to play war and to enter
+* their username
+*/
     public static void main(String[] args) {
         String game = "War";
         WarGame war = new WarGame(game);
@@ -46,6 +48,11 @@ public class War {
                   player2.setName(comp);
                   war.players.add(player2);
                 }
+/*
+ * While the player wants to keep playing, the deck from the GroupOfCards class
+ * is brought in as a new deck and 2 different card hands are created for each 
+ * player in an arraylist and the game starts with the card hands being taken in
+ */
                 do{
                     ArrayList<Card> deck = GroupOfCards.newDeck();
                     ArrayList<Card> hand1 = new ArrayList<>();

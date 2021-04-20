@@ -8,8 +8,7 @@ package ca.sheridancollege.project;
 import java.util.ArrayList;
 
 /**
- * The class that models your game. You should create a more specific child of this class and instantiate the methods
- * given.
+ * The model class that models the game with the amount of players 
  *
  * @author dancye
  * @author Paul Bonenfant Jan 2020
@@ -47,12 +46,14 @@ public abstract class Game {
 
 
     /**
-     * Play the game. This might be one method or many method calls depending on your game.
+     * Play the game. It takes both players decks which are both array lists 
+     * of cards.
      */
     public abstract void play(ArrayList<Card> hand1,ArrayList<Card> hand2);
     
     /**
-     * When the game is over, use this method to declare and display a winning player.
+     * When the game is over, use this method to declare and display a winning 
+     * player. Also takes both players scores from the play() in WarGame class
      */
     public abstract void declareWinner(int score1, int score2);
 }

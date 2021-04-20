@@ -10,8 +10,8 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * A concrete class that represents any grouping of cards for a Game. HINT, you might want to subclass this more than
- * once. The group of cards has a maximum size attribute which is flexible for reuse.
+ * A concrete class that creates the card deck and inherits the value and name
+ * of the card
  *
  * @author dancye
  * @author Paul Bonenfant Jan 2020
@@ -19,7 +19,9 @@ import java.util.List;
 public class GroupOfCards extends Card {
 
         private static List<Card> cards = new ArrayList<Card>();
-
+/*
+ * Creating the entire deck of cards froms the enums
+ */
     static {
             for(SUIT s : SUIT.values()){
                 for(VALUE v : VALUE.values()){
@@ -28,15 +30,23 @@ public class GroupOfCards extends Card {
 		    }
 		}
     }
-
+/*
+ * Protected because we do not want to change the values or give any other class
+   the suit and value
+ */
     protected GroupOfCards(final SUIT suit, final VALUE value) {
     	super(suit, value);
     }
- 
+ /*
+ * returns the created deck of cards as a new deck for if the user wants to play
+   again
+ */
     public static ArrayList<Card> newDeck() {
     	return new ArrayList<Card>(GroupOfCards.cards);
     }
-    
+/*
+ * Shuffles the cards
+ */
     public static void shuffle() {
         Collections.shuffle(cards);
     }

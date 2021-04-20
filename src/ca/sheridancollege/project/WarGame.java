@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 
 /**
- *
+ * The controller class that starts the actual game
  * @author scott
  */
 public class WarGame extends Game{
@@ -20,7 +20,11 @@ public class WarGame extends Game{
         super(name);
         players = new ArrayList();
     }
-
+/**
+ * The game starts taking in the hands and sets the players score to 0.
+ * Each card is being printed for each player and whoever has the highest card
+ * at the time wins the round and get one point.
+ */
     @Override
     public void play(ArrayList<Card> hand1, ArrayList<Card> hand2) {
         System.out.println("p1"+"\t\t\t\t"+"p2");
@@ -46,6 +50,9 @@ public class WarGame extends Game{
         }
     }//To change body of generated methods, choose Tools | Templates.
 
+ /**
+ * as soon as every card has been played, whichever player has more points wins.
+ */
     @Override
     public void declareWinner(int score1, int score2) {
         if(score1 > score2){

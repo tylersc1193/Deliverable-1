@@ -6,15 +6,19 @@
 package ca.sheridancollege.project;
 
 /**
- * A class to be used as the base Card class for the project. Must be general enough to be instantiated for any Card
- * game. Students wishing to add to the code should remember to add themselves as a modifier.
- *
+ * A model class that creates a card
  * @author dancye
+ * @author Mathison, Scott & Malik April 2021
  */
 public abstract class Card {
     //default modifier for child classes
 
-  public enum VALUE {
+ /*
+ * Creating an enum for the value of the card and the actual value is the int
+    in the enums ordinal
+ */
+    public enum VALUE {
+        
         TWO(2),
         THREE(3),
         FOUR(4),
@@ -28,27 +32,33 @@ public abstract class Card {
         QUEEN(12),
         KING(13),
         ACE(14);
-    
+
         private final int rank;
-        
+
         private VALUE(int rank){
             this.rank = rank;
         }
-        
+
         public int getRank(){
             return rank;
         }
-        
+
         @Override
         public String toString(){
             return String.format("%s",rank);
         }
-} 
+    } 
+    
+ /*
+ * Same goes for the suit, except the enum does not hold any values
+ */
     public enum SUIT {
         CLUBS,DIAMONDS,SPADES,HEARTS;
     }
 
-   
+/*
+ * Finalize the enums so they cannot be changed
+ */
     private final SUIT suit;
     private final VALUE value;
     
@@ -66,6 +76,9 @@ public abstract class Card {
     public VALUE getValue() {
         return value;
     }
+/*
+ * the string that prints the card's suit, value and rank
+ */
     @Override
     public String toString() {
     	return value.name() + " of " + suit + "(" + value.getRank() +")";
